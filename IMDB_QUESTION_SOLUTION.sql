@@ -89,13 +89,13 @@ Country, worlwide_gross_income, languages and production_company columns have NU
 
 /* Output format for the first part:
 
-+---------------+-------------------+
-| Year			|	number_of_movies|
-+-------------------+----------------
-|	2017		|	2134			|
-|	2018		|		.			|
-|	2019		|		.			|
-+---------------+-------------------+
++-------------------+--------------------+
+| Year		    |    number_of_movies|
++-------------------+--------------------+
+|	2017	    |	    2134	 |
+|	2018	    |		.	 |
+|	2019	    |		.	 |
++---------------+------------------------+
 
 
 Output format for the second part of the question:
@@ -658,6 +658,19 @@ All the movies belong to the top 3 genres.
 
 
 -- You should also try your hand at median rating and check whether the ‘median rating’ column gives any significant insights.
+
+SELECT m.title,
+       r.median_rating,
+       g.genre
+FROM   movie m
+       INNER JOIN ratings r
+               ON r.movie_id = m.id
+       INNER JOIN genre g
+               ON g.movie_id = m.id
+WHERE  m.title LIKE 'The%'
+       AND r.median_rating > 8
+ORDER  BY r.median_rating DESC;
+
 -- Q16. Of the movies released between 1 April 2018 and 1 April 2019, how many were given a median rating of 8?
 -- Type your code below:
 
@@ -691,8 +704,17 @@ GROUP BY median_rating;
 SELECT country, sum(total_votes) as total_votes
 FROM movie AS m
 	INNER JOIN ratings as r ON m.id=r.movie_id
-WHERE country = 'Germany' or country = 'Italy'
+WHERE country like '%Germany%' or country like '%Italy%'
 GROUP BY country;
+
+-- By language we will also compute
+
+SELECT 
+    SUM(CASE WHEN m.languages LIKE '%German%' THEN r.total_votes ELSE 0 END) AS German_movie,
+    SUM(CASE WHEN m.languages LIKE '%Italian%' THEN r.total_votes ELSE 0 END) AS Italian_movie
+FROM 
+    movie AS m
+    INNER JOIN ratings AS r ON m.id = r.movie_id;
 
 
 
@@ -700,12 +722,20 @@ GROUP BY country;
 Answer is YES if German votes > Italian votes
 Answer is NO if German votes <= Italian votes
 By observation, German movies received the highest number of votes when queried against language and country columns.
+By Country
 +---------+-------------+
 | country | total_votes |
 +---------+-------------+
 | Germany |      106710 |
 | Italy   |       77965 |
 +---------+-------------+
+
+By Language
++--------------+---------------+
+| German_movie | Italian_movie |
++--------------+---------------+
+|      4421525 |       2559540 |
++--------------+---------------+
 */
 
 

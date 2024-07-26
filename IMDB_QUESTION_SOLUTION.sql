@@ -1167,9 +1167,89 @@ Genre-wise running total and moving average of the average movie duration are -
 -- Top 3 Genres based on most number of movies
 
 
+WITH top3_genre AS (
+    SELECT 
+        genre,
+        COUNT(movie_id) AS movie_count
+    FROM 
+        genre
+    GROUP BY 
+        genre
+    ORDER BY 
+        movie_count DESC
+    LIMIT 3
+),
+
+-- Convert and rank movies based on worldwide gross income
+top5_movie AS (
+    SELECT 
+        g.genre,
+        m.year,
+        m.title AS movie_name,
+        CASE
+            WHEN m.worlwide_gross_income LIKE 'INR%' THEN
+                CONCAT('$', FORMAT(CAST(REPLACE(REPLACE(m.worlwide_gross_income, 'INR', ''), ' ', '') AS DECIMAL(15, 2)) / 82, 2))
+            WHEN m.worlwide_gross_income LIKE '$%' THEN
+                CONCAT('$', REPLACE(REPLACE(m.worlwide_gross_income, '$', ''), ' ', ''))
+            ELSE
+                NULL
+        END AS worldwide_gross_income_usd,
+        DENSE_RANK() OVER (PARTITION BY m.year ORDER BY 
+            CASE
+                WHEN m.worlwide_gross_income LIKE 'INR%' THEN
+                    CAST(REPLACE(REPLACE(m.worlwide_gross_income, 'INR', ''), ' ', '') AS DECIMAL(15, 2)) / 82
+                WHEN m.worlwide_gross_income LIKE '$%' THEN
+                    CAST(REPLACE(REPLACE(m.worlwide_gross_income, '$', ''), ' ', '') AS DECIMAL(15, 2))
+                ELSE
+                    NULL
+            END DESC) AS movie_rank
+    FROM 
+        movie AS m
+        INNER JOIN genre AS g ON m.id = g.movie_id
+    WHERE 
+        g.genre IN (SELECT genre FROM top3_genre)
+)
+
+-- Select top 5 highest-grossing movies per year and genre
+SELECT 
+    genre,
+    year,
+    movie_name,
+    worldwide_gross_income_usd AS worldwide_gross_income,
+    movie_rank
+FROM 
+    top5_movie
+WHERE 
+    movie_rank <= 5
+ORDER BY 
+    year,
+    movie_rank;
 
 
-
+/*
+Assumed $1 to be 82 INR, Please fine the Yearly rank of heighest world wide gross income below in tabular formnat.
++----------+------+--------------------------------+------------------------+------------+
+| genre    | year | movie_name                     | worldwide_gross_income | movie_rank |
++----------+------+--------------------------------+------------------------+------------+
+| Thriller | 2017 | The Fate of the Furious        | $1236005118            |          1 |
+| Comedy   | 2017 | Despicable Me 3                | $1034799409            |          2 |
+| Comedy   | 2017 | Jumanji: Welcome to the Jungle | $962102237             |          3 |
+| Drama    | 2017 | Zhan lang II                   | $870325439             |          4 |
+| Thriller | 2017 | Zhan lang II                   | $870325439             |          4 |
+| Comedy   | 2017 | Guardians of the Galaxy Vol. 2 | $863756051             |          5 |
+| Drama    | 2018 | Bohemian Rhapsody              | $903655259             |          1 |
+| Thriller | 2018 | Venom                          | $856085151             |          2 |
+| Thriller | 2018 | Mission: Impossible - Fallout  | $791115104             |          3 |
+| Comedy   | 2018 | Deadpool 2                     | $785046920             |          4 |
+| Comedy   | 2018 | Ant-Man and the Wasp           | $622674139             |          5 |
+| Drama    | 2019 | Avengers: Endgame              | $2797800564            |          1 |
+| Drama    | 2019 | The Lion King                  | $1655156910            |          2 |
+| Comedy   | 2019 | Toy Story 4                    | $1073168585            |          3 |
+| Drama    | 2019 | Joker                          | $995064593             |          4 |
+| Thriller | 2019 | Joker                          | $995064593             |          4 |
+| Thriller | 2019 | Ne Zha zhi mo tong jiang shi   | $700547754             |          5 |
++----------+------+--------------------------------+------------------------+------------+
+*/
 
 
 

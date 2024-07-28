@@ -100,11 +100,11 @@ Country, worlwide_gross_income, languages and production_company columns have NU
 
 Output format for the second part of the question:
 +---------------+-------------------+
-|	month_num	|	number_of_movies|
-+---------------+----------------
-|	1			|	 134			|
-|	2			|	 231			|
-|	.			|		.			|
+|    month_num	|   number_of_movies|
++---------------+-------------------+
+|	1	|	 134	    |
+|	2	|	 231	    |
+|	.	|	.	    |
 +---------------+-------------------+ */
 -- Type your code below:
 
@@ -276,11 +276,11 @@ Now, let's find out the possible duration of RSVP Movies’ next project.*/
 /* Output format:
 
 +---------------+-------------------+
-| genre			|	avg_duration	|
-+-------------------+----------------
-|	thriller	|		105			|
-|	.			|		.			|
-|	.			|		.			|
+| genre		|   avg_duration    |
++---------------+-------------------+
+|   thriller	|	105	    |
+|	.	|	.	    |
+|	.	|	.	    |
 +---------------+-------------------+ */
 -- Type your code below:
 
@@ -325,9 +325,9 @@ Lets find where the movies of genre 'thriller' on the basis of number of movies.
 
 /* Output format:
 +---------------+-------------------+---------------------+
-| genre			|		movie_count	|		genre_rank    |	
+| genre		|	movie_count |	genre_rank        |	
 +---------------+-------------------+---------------------+
-|drama			|	2312			|			2		  |
+|drama		|	2312	    |		2	  |
 +---------------+-------------------+---------------------+*/
 -- Type your code below:
 
@@ -371,9 +371,9 @@ To start with lets get the min and max values of different columns in the table*
 -- Q10.  Find the minimum and maximum values in  each column of the ratings table except the movie_id column?
 /* Output format:
 +---------------+-------------------+---------------------+----------------------+-----------------+-----------------+
-| min_avg_rating|	max_avg_rating	|	min_total_votes   |	max_total_votes 	 |min_median_rating|min_median_rating|
+| min_avg_rating|  max_avg_rating   |	min_total_votes   |	max_total_votes  |min_median_rating|min_median_rating|
 +---------------+-------------------+---------------------+----------------------+-----------------+-----------------+
-|		0		|			5		|	       177		  |	   2000	    		 |		0	       |	8			 |
+|	0	|		5   |	       177	  |	   2000	    	 |	0	   |      8	     |
 +---------------+-------------------+---------------------+----------------------+-----------------+-----------------+*/
 -- Type your code below:
 
@@ -403,12 +403,12 @@ Now, let’s find out the top 10 movies based on average rating.*/
 -- Q11. Which are the top 10 movies based on average rating?
 /* Output format:
 +---------------+-------------------+---------------------+
-| title			|		avg_rating	|		movie_rank    |
+| title		|	avg_rating  |	movie_rank        |
 +---------------+-------------------+---------------------+
-| Fan			|		9.6			|			5	  	  |
-|	.			|		.			|			.		  |
-|	.			|		.			|			.		  |
-|	.			|		.			|			.		  |
+| Fan		|		9.6 |		5	  |
+|	.	|		.   |		.	  |
+|	.	|		.   |		.	  |
+|	.	|		.   |		.	  |
 +---------------+-------------------+---------------------+*/
 -- Type your code below:
 -- It's ok if RANK() or DENSE_RANK() is used too
@@ -467,11 +467,11 @@ Summarising the ratings table based on the movie counts by median rating can giv
 /* Output format:
 
 +---------------+-------------------+
-| median_rating	|	movie_count		|
-+-------------------+----------------
-|	1			|		105			|
-|	.			|		.			|
-|	.			|		.			|
+| median_rating	|	movie_count |
++---------------+-------------------+
+|	1	|	105	    |
+|	.	|	.	    |
+|	.	|	.	    |
 +---------------+-------------------+ */
 -- Type your code below:
 -- Order by is good to have
@@ -507,9 +507,9 @@ Now, let's find out the production house with which RSVP Movies can partner for 
 -- Q13. Which production house has produced the most number of hit movies (average rating > 8)??
 /* Output format:
 +------------------+-------------------+---------------------+
-|production_company|movie_count	       |	prod_company_rank|
+|production_company|movie_count	       |    prod_company_rank|
 +------------------+-------------------+---------------------+
-| The Archers	   |		1		   |			1	  	 |
+| The Archers	   |		1      |   1	  	     |
 +------------------+-------------------+---------------------+*/
 -- Type your code below:
 
@@ -549,13 +549,13 @@ They have rank=1 and movie count =3
 -- Q14. How many movies released in each genre during March 2017 in the USA had more than 1,000 votes?
 /* Output format:
 
-+---------------+-------------------+
-| genre			|	movie_count		|
-+-------------------+----------------
-|	thriller	|		105			|
-|	.			|		.			|
-|	.			|		.			|
-+---------------+-------------------+ */
++-------------------+-------------------+
+| genre		    |	movie_count	|
++-------------------+-------------------+
+|	thriller    |		105	|
+|	.	    |		.	|
+|	.	    |		.	|
++-------------------+-------------------+ */
 -- Type your code below:
 
 /*
@@ -604,12 +604,12 @@ Top 3 genres are drama, comedy and action during March 2017 in the USA and had m
 -- Q15. Find movies of each genre that start with the word ‘The’ and which have an average rating > 8?
 /* Output format:
 +---------------+-------------------+---------------------+
-| title			|		avg_rating	|		genre	      |
+| 	title	|	avg_rating  |		genre	  |
 +---------------+-------------------+---------------------+
-| Theeran		|		8.3			|		Thriller	  |
-|	.			|		.			|			.		  |
-|	.			|		.			|			.		  |
-|	.			|		.			|			.		  |
+| 	Theeran	|	8.3	    |		Thriller  |
+|	.	|	.	    |			. |
+|	.	|	.	    |			. |
+|	.	|	.	    |			. |
 +---------------+-------------------+---------------------+*/
 -- Type your code below:
 
@@ -754,9 +754,9 @@ Let’s begin by searching for null values in the tables.*/
 -- Q18. Which columns in the names table have null values??
 /*Hint: You can find null values for individual columns or follow below output format
 +---------------+-------------------+---------------------+----------------------+
-| name_nulls	|	height_nulls	|date_of_birth_nulls  |known_for_movies_nulls|
+| name_nulls	|	height_nulls| date_of_birth_nulls |known_for_movies_nulls|
 +---------------+-------------------+---------------------+----------------------+
-|		0		|			123		|	       1234		  |	   12345	    	 |
+|0		|    123	    |	       1234	  |	   12345 	 |
 +---------------+-------------------+---------------------+----------------------+*/
 -- Type your code below:
 
@@ -789,11 +789,11 @@ Let’s find out the top three directors in the top three genres who can be hire
 /* Output format:
 
 +---------------+-------------------+
-| director_name	|	movie_count		|
+| director_name	|	movie_count |
 +---------------+-------------------|
-|James Mangold	|		4			|
-|	.			|		.			|
-|	.			|		.			|
+|James Mangold	|		4   |
+|	.	|		.   |
+|	.	|		.   |
 +---------------+-------------------+ */
 -- Type your code below:
 
@@ -845,12 +845,12 @@ Now, let’s find out the top two actors.*/
 -- Q20. Who are the top two actors whose movies have a median rating >= 8?
 /* Output format:
 
-+---------------+-------------------+
-| actor_name	|	movie_count		|
-+-------------------+----------------
-|Christain Bale	|		10			|
-|	.			|		.			|
-+---------------+-------------------+ */
++---------------+--------------------+
+| actor_name	|	movie_count  |
++-------------------+----------------+
+|Christain Bale	|		10   |
+|	.	|		.    |
++---------------+--------------------+ */
 -- Type your code below:
 
 SELECT N.name          AS actor_name,
@@ -886,12 +886,12 @@ Let’s find out the top three production houses in the world.*/
 -- Q21. Which are the top three production houses based on the number of votes received by their movies?
 /* Output format:
 +------------------+--------------------+---------------------+
-|production_company|vote_count			|		prod_comp_rank|
+|production_company|   vote_count	|	prod_comp_rank|
 +------------------+--------------------+---------------------+
-| The Archers		|		830			|		1	  		  |
-|	.				|		.			|			.		  |
-|	.				|		.			|			.		  |
-+-------------------+-------------------+---------------------+*/
+| The Archers	   |		830	|		1     |
+|	.	   |		.	|		.     |
+|	.	   |		.	|	        .     |
++------------------+--------------------+---------------------+*/
 -- Type your code below:
 
 WITH ranking AS(
@@ -929,17 +929,17 @@ Let’s find who these actors could be.*/
 -- (Hint: You should use the weighted average based on votes. If the ratings clash, then the total number of votes should act as the tie breaker.)
 
 /* Output format:
-+---------------+-------------------+---------------------+----------------------+-----------------+
-| actor_name	|	total_votes		|	movie_count		  |	actor_avg_rating 	 |actor_rank	   |
-+---------------+-------------------+---------------------+----------------------+-----------------+
-|	Yogi Babu	|			3455	|	       11		  |	   8.42	    		 |		1	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-+---------------+-------------------+---------------------+----------------------+-----------------+*/
++---------------+--------------------+---------------------+----------------------+-----------------+
+| actor_name	|	total_votes  |	movie_count	   |	actor_avg_rating  |    actor_rank   |
++---------------+--------------------+---------------------+----------------------+-----------------+
+|Yogi Babu	|	3455	     |	       11	   |	   8.42	          |     1   	    |
+|.		|	.	     |	       .	   |	   .	    	  |	.           |
+|.		|	.	     |	       .	   |	   .	    	  |	.           |
+|.		|       .	     |	       .	   |	   .	    	  |	.           |
++---------------+--------------------+---------------------+----------------------+-----------------+*/
 -- Type your code below:
 
-
+-- Considering Only Indian Movies
 WITH actor_summary AS (
     SELECT 
         N.name AS actor_name,
@@ -1008,6 +1008,39 @@ Top actor is Vijay Sethupathi followed by Fahadh Faasil and Yogi Babu.
 +--------------------+-------------+-------------+------------------+------------+
 */
 
+-- Considering all the movies which have released in Hindi language
+WITH ActorRatings AS (
+    SELECT 
+        n.name AS actor_name, 
+        SUM(r.total_votes) AS total_votes, 
+        COUNT(m.id) AS movie_count, 
+        ROUND(SUM(r.avg_rating * r.total_votes) / Sum(r.total_votes), 2) AS 'actor_avg_rating'
+    FROM 
+        movie m
+    INNER JOIN 
+        ratings r ON r.movie_id = m.id
+    INNER JOIN 
+        role_mapping rm ON rm.movie_id = m.id
+    INNER JOIN 
+        names n ON rm.name_id = n.id
+    WHERE 
+        rm.category = 'actor'
+        AND m.country LIKE '%India%'
+    GROUP BY 
+        n.name
+    HAVING 
+        COUNT(m.id) > 4
+)
+SELECT 
+    actor_name, 
+    total_votes, 
+    movie_count, 
+    actor_avg_rating, 
+    RANK() OVER (ORDER BY actor_avg_rating DESC, total_votes DESC) AS 'actor_rank'
+FROM 
+    ActorRatings
+ORDER BY 
+    actor_rank;
 
 -- Top actor is Vijay Sethupathi
 
@@ -1016,12 +1049,12 @@ Top actor is Vijay Sethupathi followed by Fahadh Faasil and Yogi Babu.
 -- (Hint: You should use the weighted average based on votes. If the ratings clash, then the total number of votes should act as the tie breaker.)
 /* Output format:
 +---------------+-------------------+---------------------+----------------------+-----------------+
-| actress_name	|	total_votes		|	movie_count		  |	actress_avg_rating 	 |actress_rank	   |
+| actress_name	|	total_votes |	movie_count	  |actress_avg_rating 	 |  actress_ranK   |
 +---------------+-------------------+---------------------+----------------------+-----------------+
-|	Tabu		|			3455	|	       11		  |	   8.42	    		 |		1	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
+|    Tabu	|	3455	    |	       11	  |	   8.42	    	 |		1  |
+|	.       |	.	    |	       .	  |	   .	    	 |		.  |
+|	.	|	.	    |	       .	  |	   .	    	 |		.  |
+|	.	|	.	    |	       .	  |	   .	    	 |		.  |
 +---------------+-------------------+---------------------+----------------------+-----------------+*/
 -- Type your code below:
 
@@ -1124,14 +1157,14 @@ Now, you will perform some tasks that will give you a broader understanding of t
 -- Q25. What is the genre-wise running total and moving average of the average movie duration? 
 -- (Note: You need to show the output table in the question.) 
 /* Output format:
-+---------------+-------------------+---------------------+----------------------+
-| genre			|	avg_duration	|running_total_duration|moving_avg_duration  |
-+---------------+-------------------+---------------------+----------------------+
-|	comdy		|			145		|	       106.2	  |	   128.42	    	 |
-|		.		|			.		|	       .		  |	   .	    		 |
-|		.		|			.		|	       .		  |	   .	    		 |
-|		.		|			.		|	       .		  |	   .	    		 |
-+---------------+-------------------+---------------------+----------------------+*/
++---------------+-------------------+----------------------+----------------------+
+| genre		|	avg_duration|running_total_duration| moving_avg_duration  |
++---------------+-------------------+----------------------+----------------------+
+|	comdy	|	145	    |	       106.2	  |	   128.42     	  |
+|	.	|	.           |	       .	  |	   .		  |
+|	.	|	.	    |	       .	  |	   .	    	  |
+|	.	|	.      	    |          .	  |	   .	    	  |
++---------------+-------------------+---------------------+-----------------------+*/
 -- Type your code below:
 
 WITH genre_avg_duration AS (
@@ -1185,12 +1218,12 @@ Genre-wise running total and moving average of the average movie duration are -
 
 /* Output format:
 +---------------+-------------------+---------------------+----------------------+-----------------+
-| genre			|	year			|	movie_name		  |worldwide_gross_income|movie_rank	   |
+| genre		|	year	    |	movie_name	  |worldwide_gross_income|movie_rank	   |
 +---------------+-------------------+---------------------+----------------------+-----------------+
-|	comedy		|			2017	|	       indian	  |	   $103244842	     |		1	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
+|comedy		|	2017	    |     indian	  |	   $103244842    |    1	           |
+|.		|	.	    |	       . 	  |	   .	         |    .	           |
+|.		|	.      	    |	       .	  |	   .	         |    .	           |
+|.		|	.   	    |	       .	  |	   .	         |    .	           |
 +---------------+-------------------+---------------------+----------------------+-----------------+*/
 -- Type your code below:
 
@@ -1289,11 +1322,11 @@ Assumed $1 to be 82 INR, Please fine the Yearly rank of heighest world wide gros
 -- Q27.  Which are the top two production houses that have produced the highest number of hits (median rating >= 8) among multilingual movies?
 /* Output format:
 +-------------------+-------------------+---------------------+
-|production_company |movie_count		|		prod_comp_rank|
+|production_company |movie_count	|	prod_comp_rank|
 +-------------------+-------------------+---------------------+
-| The Archers		|		830			|		1	  		  |
-|	.				|		.			|			.		  |
-|	.				|		.			|			.		  |
+| The Archers	    |	830		|	1	      |
+|	.	    |	.		|	.	      |
+|	.	    |	.		|	.	      |
 +-------------------+-------------------+---------------------+*/
 -- Type your code below:
 
@@ -1332,11 +1365,11 @@ Star Cinema and Twentieth Century Fox are the top two production houses that hav
 -- Q28. Who are the top 3 actresses based on number of Super Hit movies (average rating >8) in drama genre?
 /* Output format:
 +---------------+-------------------+---------------------+----------------------+-----------------+
-| actress_name	|	total_votes		|	movie_count		  |actress_avg_rating	 |actress_rank	   |
+| actress_name	|	total_votes |	movie_count	  |actress_avg_rating	 |actress_rank	   |
 +---------------+-------------------+---------------------+----------------------+-----------------+
-|	Laura Dern	|			1016	|	       1		  |	   9.60			     |		1	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
-|		.		|			.		|	       .		  |	   .	    		 |		.	       |
+|Laura Dern	|           1016    |	       1	  |	   9.60		 |	1          |
+|.		|              .    |	       .	  |	   .	    	 |	.	   |
+|.		|              .    |	       .	  |	   .	    	 |	.          |
 +---------------+-------------------+---------------------+----------------------+-----------------+*/
 -- Type your code below:
 
@@ -1387,20 +1420,20 @@ total movie durations
 
 Format:
 +---------------+-------------------+---------------------+----------------------+--------------+--------------+------------+------------+----------------+
-| director_id	|	director_name	|	number_of_movies  |	avg_inter_movie_days |	avg_rating	| total_votes  | min_rating	| max_rating | total_duration |
+| director_id	|     director_name |	number_of_movies  | avg_inter_movie_days |  avg_rating	| total_votes  | min_rating | max_rating | total_duration |
 +---------------+-------------------+---------------------+----------------------+--------------+--------------+------------+------------+----------------+
-|nm1777967		|	A.L. Vijay		|			5		  |	       177			 |	   5.65	    |	1754	   |	3.7		|	6.9		 |		613		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
-|	.			|		.			|			.		  |	       .			 |	   .	    |	.		   |	.		|	.		 |		.		  |
+|nm1777967	|	A.L. Vijay  |			5 |	       177	 |	   5.65	|	1754   |	3.7 |	6.9	 |  613		  |
+|	.	|		.   |			. |	       .	 |	   .	|	.      |	.   |	.	 |    .		  |
+|	.	|		.   |			. |	       .	 |	   .	|	.      |	.   |	.	 |    .		  |
+|	.	|		.   |			. |	       .	 |	   .	|	.      |	.   |	.	 |    .		  |
+|	.	|		.   |			. |	       .	 |	   .	|	.      |	.   |	.	 |    .		  |
+|	.	|		.   |			. |	       .	 |	   .	|	.      |	.   |	.	 |    .		  |
+|	.	|		.   |			. |	       .	 |	   .	|	.      |	.   |	.	 |    .		  |
+|	.	|		.   |			. |	       .	 |	   .	|	.      |	.   |	.	 |    .		  |
+|	.	|		.   |			. |	       .	 |	   .	|	.      |	.   |	.	 |    .		  |
 +---------------+-------------------+---------------------+----------------------+--------------+--------------+------------+------------+----------------+
 
---------------------------------------------------------------------------------------------*/
+*/
 -- Type you code below:
 
 
